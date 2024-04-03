@@ -24,7 +24,7 @@ const AboutPage = () => {
           </div>
           <div className="w-full">
             <div className="w-3/4 h-full relative mx-auto">
-            <Image src="/about.png" alt="a" fill />
+            <Image src="/about.png" alt="a" fill className="object-contain"/>
             </div>
           </div>
         </div>

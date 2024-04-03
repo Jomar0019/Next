@@ -21,7 +21,7 @@ const Home = () => {
       </div>
       <div className="w-full">
         <div className="relative w-3/4 mx-auto h-full">
-          <Image src="/hero.gif" alt="home gif" fill/>
+          <Image src="/hero.gif" alt="home gif" fill className="object-contain"/>
         </div>
       </div>
     </div>
