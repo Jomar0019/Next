@@ -1,6 +1,9 @@
 import PostCard from "@/components/postCard/PostCard";
 
-const BlogPage = () => {
+const BlogPage = ({ searchParams }) => {
+
+  console.log(searchParams)
+
     return (
       <div className="flex flex-wrap gap-12 py-6">
         <PostCard />

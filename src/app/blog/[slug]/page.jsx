@@ -1,21 +1,28 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css"
 
-const SinglePostPage = () => {
+const SinglePostPage = ({ params }) => {
+
+  console.log(params)
+
+
     return (
       <div className={styles.container}>
         <div className="w-1/4 h-[550px] relative">
           <Image 
             src="https://images.pexels.com/photos/20750259/pexels-photo-20750259/free-photo-of-pigeon-point-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             fill
+            sizes="100%"
+            alt="imgfree"
             className="object-contain"
+            priority
           />
         </div>
         <div className="w-3/4 text-white p-6">
           <h1 className="text-4xl font-bold">Title</h1>
           <div className="flex items-center gap-3 my-6">
             <div className="w-10 h-10  relative">
-              <Image src="/noavatar.png" fill className="object-contain rounded-full"/>
+              <Image src="/noavatar.png" alt="img" fill sizes="100%" className="object-contain rounded-full"/>
             </div>
             <div className="text-sm">
               <h5 className="font-bold text-white/70">Author</h5>

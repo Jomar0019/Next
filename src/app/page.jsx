@@ -16,12 +16,12 @@ const Home = () => {
           <button className="w-[120px] px-3 py-4 bg-white rounded text-sm">Contact</button>
         </div>
         <div className="w-[500px] h-[50px] relative mt-12">
-          <Image src="/brands.png" alt="home" fill className="grayscale cursor-pointer" />
+          <Image src="/brands.png" alt="home" fill sizes="100%" className="grayscale cursor-pointer" />
         </div>
       </div>
       <div className="w-full">
         <div className="relative w-3/4 mx-auto h-full">
-          <Image src="/hero.gif" alt="home gif" fill className="object-contain"/>
+          <Image src="/hero.gif" alt="home gif" fill sizes="100%" className="object-contain" priority="true"/>
         </div>
       </div>
     </div>

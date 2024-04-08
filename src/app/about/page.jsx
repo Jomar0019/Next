@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
 
+
 const AboutPage = () => {
+
     return (
         <div className="flex">
           <div className="w-full">
@@ -24,7 +27,7 @@ const AboutPage = () => {
           </div>
           <div className="w-full">
             <div className="w-3/4 h-full relative mx-auto">
-            <Image src="/about.png" alt="a" fill className="object-contain"/>
+            <Image src="/about.png" alt="a" fill sizes="100%" className="object-contain" priority="true" />
             </div>
           </div>
         </div>
