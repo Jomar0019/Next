@@ -1,9 +1,21 @@
 import Image from "next/image";
 import styles from "./singlePost.module.css"
 
-const SinglePostPage = ({ params }) => {
+const getData = async (slug) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`);
 
-  console.log(params)
+  if(!res.ok) {
+    throw new Error("Something went wrong")
+  }
+
+  return res.json();
+}
+
+const SinglePostPage = async ({ params }) => {
+
+  const { slug } = params;
+
+  const singlePost = await getData(slug);
 
 
     return (
@@ -19,7 +31,7 @@ const SinglePostPage = ({ params }) => {
           />
         </div>
         <div className="w-3/4 text-white p-6">
-          <h1 className="text-4xl font-bold">Title</h1>
+          <h1 className="text-4xl font-bold">{singlePost.title}</h1>
           <div className="flex items-center gap-3 my-6">
             <div className="w-10 h-10  relative">
               <Image src="/noavatar.png" alt="img" fill sizes="100%" className="object-contain rounded-full"/>
@@ -34,7 +46,7 @@ const SinglePostPage = ({ params }) => {
             </div>
           </div>
           <div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore ipsum similique veniam facere id tempore dolorem placeat ea, hic impedit autem, assumenda vitae ut delectus.</p>
+            <p>{singlePost.body}</p>
           </div>
         </div>
       </div>

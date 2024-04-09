@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const PostCard = () => {
+const PostCard = ({ post }) => {
   return (
     <div className="w-[30%] ">
         <div className="flex justify-between ">
@@ -13,9 +13,9 @@ const PostCard = () => {
             </div>
         </div>
         <div className="flex flex-col gap-3 text-white mt-3">
-            <h2 className="font-bold text-xl">Title</h2>
-            <p className="text-white/70 text-sm">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, necessitatibus.</p>
-            <Link href="/blog/post" className="underline">Read More</Link>
+            <h2 className="font-bold text-xl">{post.title}</h2>
+            <p className="text-white/60 text-sm">{post.body}</p>
+            <Link href={`/blog/${post.id}`} className="underline">Read More</Link>
         </div>
     </div>
   )
