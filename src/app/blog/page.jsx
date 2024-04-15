@@ -1,18 +1,25 @@
 import PostCard from "@/components/postCard/PostCard";
+import { getPosts } from "@/lib/data";
 
-const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {});
 
-  if(!res.ok) {
-    throw new Error("Something went wrong")
-  }
+// FETCH DATA WITH API
+// const getData = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts", {});
 
-  return res.json();
-}
+//   if(!res.ok) {
+//     throw new Error("Something went wrong")
+//   }
+
+//   return res.json();
+// }
 
 const BlogPage = async () => {
 
-  const posts = await getData();
+  // FETCH DATA WITH API
+  // const posts = await getData();
+
+ // FETCH DATA WITHOUT API
+  const posts = await getPosts();
 
     return (
       <div className="flex flex-wrap gap-12 py-6">
