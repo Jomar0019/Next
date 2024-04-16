@@ -12,6 +12,8 @@ const { getUser } = require("@/lib/data")
 
 // }
 
+// mongodb+srv://<username>:<password>@cluster0.qqnogza.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
 
 const PostUser = async ({ userId }) => {
 
