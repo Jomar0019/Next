@@ -25,7 +25,7 @@ const PostUser = async ({ userId }) => {
   return (
     <div className="text-sm">
         <h5 className="font-bold text-white/70">Author</h5>
-        <p>{user.name}</p>
+        <p>{user.username}</p>
   </div>
   )
 }

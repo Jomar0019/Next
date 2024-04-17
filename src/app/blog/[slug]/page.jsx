@@ -33,14 +33,14 @@ const SinglePostPage = async ({ params }) => {
     return (
       <div className={styles.container}>
         <div className="w-1/4 h-[550px] relative">
-          <Image 
-            src="https://images.pexels.com/photos/20750259/pexels-photo-20750259/free-photo-of-pigeon-point-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          {post.img && <Image 
+            src={post.img}
             fill
             sizes="100%"
             alt="imgfree"
             className="object-contain"
             priority
-          />
+          />}
         </div>
         <div className="w-3/4 text-white p-6">
           <h1 className="text-4xl font-bold">{post.title}</h1>
@@ -53,13 +53,15 @@ const SinglePostPage = async ({ params }) => {
             </Suspense>
             <div className="text-sm">
               <h5 className="font-bold text-white/70">Published</h5>
-              <p>1-23-2333</p>
+              <p>{post.createdAt.toString().slice(4,16)}</p>
             </div>
           </div>
           <div>
-            <p>{post.body}</p>
+            <p>{post.description}</p>
           </div>
         </div>
+
+        
       </div>
     );
   };
