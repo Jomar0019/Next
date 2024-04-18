@@ -1,17 +1,6 @@
-// const users = [
-//     {id: 1, name: "John"},
-//     {id: 2, name: "Jane"},
-// ]
-
 import { connectToDb } from "./connectToDB"
 import { Post, User } from "./models"
-
-// const posts = [
-//     {id: 1, title: "Post 1", body: "......" , userId: 1},
-//     {id: 2, title: "Post 2", body: "......" , userId: 2},
-//     {id: 3, title: "Post 3", body: "......" , userId: 3},
-// ]
-
+import { unstable_noStore as noStore } from 'next/cache';
 
 export const getPosts = async () => {
     try {
@@ -36,6 +25,7 @@ export const getPost = async (slug) => {
 }
 
 export const getUser = async (id) => {
+    noStore();
     try {
         connectToDb();
         const user = await User.findById(id)
