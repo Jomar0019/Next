@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: "About Page",
-  description: "aa"
+  description: "About Page Description"
 }
 
 const AboutPage = () => {
