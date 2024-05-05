@@ -1,5 +1,7 @@
 import { useState } from "react";
 import NavLink from "./navLink/NavLink"
+import { handleLogout } from "@/lib/action";
+import { auth } from "@/lib/auth";
 
 
 const links = [
@@ -21,12 +23,11 @@ const links = [
     },
 ];
 
-const Links = () => {
+const Links = ({ session }) => {
 
     const [ open, setOpen ] = useState(false);
 
-const session = true;
-const isAdmin = true;
+    const isAdmin = true;
 
   return (
     <div>
@@ -35,10 +36,13 @@ const isAdmin = true;
                 <NavLink item={link} key={link.title}/>
             ))}
             {
-                session ? (
+                session?.user ? (
                     <>
-                        {isAdmin && <NavLink item={{title: "Admin", path: "/admin"}} />}
-                        <button className="border border-white text-white rounded-md px-4 py-2 hover:text-black hover:bg-white">Logout</button>
+                        {session.user?.isAdmin && <NavLink item={{title: "Admin", path: "/admin"}} />}
+
+                        <form action={handleLogout}>
+                            <button className="border border-white text-white rounded-md px-4 py-2 hover:text-black hover:bg-white">Logout</button>
+                        </form>
                     </>
                 ) : (
                     <NavLink item={{title: "Login", path: "/login"}} />
