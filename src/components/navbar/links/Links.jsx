@@ -41,7 +41,8 @@ const Links = ({ session }) => {
                         {session.user?.isAdmin && <NavLink item={{title: "Admin", path: "/admin"}} />}
 
                         <form action={handleLogout}>
-                            <button className="border border-white text-white rounded-md px-4 py-2 hover:text-black hover:bg-white">Logout</button>
+                            <button className=" text-black rounded-md px-4 py-2 bg-white">Logout</button>
+                            {/* bg-white text-black rounded-md px-4 py-2' */}
                         </form>
                     </>
                 ) : (
